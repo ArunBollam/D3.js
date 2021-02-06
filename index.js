@@ -29,3 +29,10 @@ var barChart = svg.selectAll('rect')
                         var translate = [barWidth * i, 0];
                         return "translate("+translate + ")";
                     });
+
+var xScale = d3.scaleLinear()
+            .domain([0, d3.max(data)])
+            .range([0, svgWidth]);
+
+var yScale = d3.scaleLinear()
+            .domain([0, d3.max(data)])
